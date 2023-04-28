@@ -17,7 +17,8 @@ public class Main {
                         "Леонидович", 1, 90_000)};
 
         System.out.println(Arrays.toString(employees));
-        System.out.println(AmountOfWages(employees));
+        System.out.println("Ежемесячные затраты на заработную плату составляют: " + AmountOfWages(employees));
+        System.out.println("Сотрудник с минимальной ЗП: " + findMinSalaryEmployee(employees));
 
     }
     
@@ -30,5 +31,20 @@ public class Main {
 
         return ammount;
     }
+
+    // метод высчитывающий сотрудника с минимальной ЗП из массива сотрудников
+    public static Employee findMinSalaryEmployee (Employee[] employees) {
+        Employee minEmployee = employees[0];
+
+        for (int i = 1; i < employees.length; i++) {
+            Employee currentEmployee = employees[i];
+            if(currentEmployee.getSalary() <= minEmployee.getSalary()) {
+                minEmployee = currentEmployee;
+            }
+        }
+        return minEmployee;
+    }
+
+
 
 }
