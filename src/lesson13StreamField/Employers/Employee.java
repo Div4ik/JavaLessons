@@ -1,32 +1,77 @@
 package lesson13StreamField.Employers;
 
 public class Employee {
-    private String name;
-    private String surName;
-    private String patronymic;
+    private String firstName;
+    private String lastName;
+    private String middleName;
     private int department;
     private double salary;
     private static int count = 1;
-    private int id;
 
-    public Employee(String name, String surName, String patronymic, int department, double salary, int id) {
-        this.name = name;
-        this.surName = surName;
-        this.patronymic = patronymic;
+    public Employee(String firstName, String lastName, String middleName, int department, double salary) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.middleName = middleName;
         this.department = department;
         this.salary = salary;
-        this.id = id;
     }
 
     @Override
     public String toString() {
         return "Employee{" +
-                "name='" + name + '\'' +
-                ", surName='" + surName + '\'' +
-                ", patronymic='" + patronymic + '\'' +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", middleName='" + middleName + '\'' +
                 ", department=" + department +
                 ", salary=" + salary +
-                ", id=" + id +
-                '}';
+                "}\n";
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    public int getDepartment() {
+        return department;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public static int getCount() {
+        return count;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+
+    public void setDepartment(int department) {
+        this.department = department;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public static void setCount(int count) {
+        Employee.count = count;
     }
 }
