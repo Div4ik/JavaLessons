@@ -6,7 +6,7 @@ public class Employee {
     private String middleName;
     private int department;
     private double salary;
-    private static int count = 1;
+    private static int count = 0;
 
     public Employee(String firstName, String lastName, String middleName, int department, double salary) {
         this.firstName = firstName;
@@ -14,14 +14,15 @@ public class Employee {
         this.middleName = middleName;
         this.department = department;
         this.salary = salary;
+        count += 1;
     }
 
     @Override
     public String toString() {
         return "Employee{" +
                 "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
                 ", middleName='" + middleName + '\'' +
+                ", lastName='" + lastName + '\'' +
                 ", department=" + department +
                 ", salary=" + salary +
                 "}\n";
